@@ -30,6 +30,9 @@ namespace M01_First_WPF_Proj
             MainFrame.Navigate(namePage);
             model.occupation = "Dentist";
             model.hobby = "Golf";
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.populateHobbyTable();
+            dataAccess.populateOccupationTable();
         }
 
         private void OpenHelpPage_Click(object sender, RoutedEventArgs e)

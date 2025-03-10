@@ -83,6 +83,8 @@ namespace M01_First_WPF_Proj
                 eyes = _currPerson.Eyes,
                 nose = _currPerson.Nose,
                 mouth = _currPerson.Mouth,
+                occupation = _currPerson.Occupation,
+                hobby = _currPerson.Hobby
             };
         }
         private void AddButton_Click(object sender, RoutedEventArgs e)

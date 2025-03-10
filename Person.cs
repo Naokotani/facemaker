@@ -16,5 +16,7 @@ namespace M01_First_WPF_Proj
         public string Eyes { get; set; }
         public string Nose { get; set; }
         public string Mouth { get; set; }
+        public string Occupation { get; set; }
+        public string Hobby { get; set; }
     }
 }
