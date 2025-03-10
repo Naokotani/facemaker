@@ -1,0 +1,125 @@
+﻿<Page x:Class="M01_First_WPF_Proj.FacePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:M01_First_WPF_Proj"
+      mc:Ignorable="d" 
+       Height="826" Width="1250"
+      Title="FacePage">
+    <Grid x:Name="myGrid" Margin="0,0,10,10">
+        <Canvas x:Name="myCanvas" HorizontalAlignment="Center" Width="1236" Margin="0,21,0,262" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.265"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+        
+        <Grid x:Name="hairs" HorizontalAlignment="Left" Margin="0,50,20, 20">
+            <StackPanel Margin="0,-20,0,0">
+                <Border BorderBrush="Black" BorderThickness="2"/>
+                <StackPanel Height="136">
+                    <Label Content="Hair Check Box" Height="39" />
+                    <CheckBox x:Name="hairCheck"
+                              Content="Hair"
+                              Width="100"
+                              Command="{Binding hair}"
+                              CommandParameter="1"
+                              IsChecked="true"
+                              Margin="5 10 5 0"/>
+                    <CheckBox x:Name="hatCheck"
+                              Content="Hat"
+                              Width="100"
+                              Command="{Binding hair}"
+                              CommandParameter="2"
+                              Margin="5 10 5 0"/>
+                    <CheckBox x:Name="spikeCheck"
+                              Content="Spikes"
+                              Width="100"
+                              Command="{Binding hair}"
+                              CommandParameter="3"
+                              Margin="5 10 5 10"/>
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="2"/>
+                <StackPanel Height="57">
+                    <Label Content="Eye Slider" />
+                    <Slider x:Name="slider1" 
+                        Minimum="1" 
+                        Maximum="3"
+                        Margin="5 5 5 5"
+                        TickFrequency="1"
+                        IsSnapToTickEnabled="True"
+                        ValueChanged="eyes_slider"/>
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="2" Height="3" RenderTransformOrigin="0.5,0.5" />
+                <StackPanel Height="65">
+                    <Label Content="Nose Combo" />
+                    <ComboBox x:Name="comboTest"
+                              HorizontalAlignment="Left"
+                              Width="120"
+                              SelectedIndex="0"
+                              Margin="5 5 5 5"
+                              SelectionChanged="nose_combo">
+                        <ComboBoxItem Name="nose1" Content="Nose One" IsSelected="True"/>
+                        <ComboBoxItem Name="nose2" Content="Nose Two"/>
+                        <ComboBoxItem Name="nose3" Content="Nose Three"/>
+                    </ComboBox>
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="2"/>
+                <StackPanel>
+                    <Label Content="Mouth Radio"  Margin="5" />
+                    <RadioButton x:Name="mouth1"
+                                 Margin="5"
+                                 Command="{Binding mouth}"
+                                 CommandParameter="1"
+                                 IsChecked="True"
+                                 GroupName="First Group"
+                                 Content="Mouth One" />
+                    <RadioButton x:Name="mouth2"
+                                 Margin="5"
+                                 Command="{Binding mouth}"
+                                 CommandParameter="2"
+                                 GroupName="First Group"
+                                 Content="Mouth Two" />
+                    <RadioButton x:Name="mouth3"
+                                 Margin="5"
+                                 Command="{Binding mouth}"
+                                 CommandParameter="3"
+                                 GroupName="First Group"
+                                 Content="Mouth Three" />
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="2"/>
+                <StackPanel Height="146">
+                    <Button x:Name="RandomFace"
+                            Content="Random Face"
+                            Margin="10"
+                            Width="76"
+                            Click="random_face"
+                            RenderTransformOrigin="0.518,5.294"/>
+                    <Button x:Name="Back"
+                            Content="Back"
+                            Margin="10"
+                            Width="76"
+                            Click="prev_click"
+                            RenderTransformOrigin="0.518,5.294"/>
+                    <Button x:Name="SaveFace"
+                            Content="Save Face"
+                            Margin="10"
+                            Width="76"
+                            Click="save_face"
+                            RenderTransformOrigin="0.518,5.294"/>
+                    <Button x:Name="CancelFace"
+                            Content="Cancel"
+                            Margin="10"
+                            Width="76"
+                            Click="cancel_face"
+                            RenderTransformOrigin="0.518,5.294"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="M01_First_WPF_Proj.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M01_First_WPF_Proj"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1050" Width="1250">
+    <Grid>
+        <DockPanel Margin="0,0,0,262">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.OpacityMask>
+            <Menu x:Name="menu" IsMainMenu="True" Height="20" VerticalAlignment="Top" >
+                <MenuItem Header="MainMenu">
+                    <MenuItem Header="_Hair" >
+                        <MenuItem Header="_Hair One" Command="{Binding hair}" CommandParameter="1" InputGestureText="F1" />
+                        <MenuItem Header="_Hair Two" Command="{Binding hair}" CommandParameter="2" InputGestureText="F2" />
+                        <MenuItem Header="_Hair Three" Command="{Binding hair}" CommandParameter="3" InputGestureText="F3" />
+                    </MenuItem>
+                    <MenuItem Header="_Eyes" >
+                        <MenuItem Header="_Eyes One" Command="{Binding eyes}" CommandParameter="1" InputGestureText="F4" />
+                        <MenuItem Header="_Eyes Two " Command="{Binding eyes}" CommandParameter="2" InputGestureText="F5" />
+                        <MenuItem Header="_Eyes Three" Command="{Binding eyes}" CommandParameter="3" InputGestureText="F6" />
+                    </MenuItem>
+                    <MenuItem Header="_Nose" >
+                        <MenuItem Header="_Nose One" Command="{Binding nose}" CommandParameter="1" InputGestureText="F7" />
+                        <MenuItem Header="_Nose Two" Command="{Binding nose}" CommandParameter="2" InputGestureText="F8" />
+                        <MenuItem Header="_Nose Three" Command="{Binding nose}" CommandParameter="3" InputGestureText="F9" />
+                    </MenuItem>
+                    <MenuItem Header="_Mouth" >
+                        <MenuItem Header="_Mouth One" Command="{Binding mouth}" CommandParameter="1" InputGestureText="F10" />
+                        <MenuItem Header="_Mouth Two" Command="{Binding mouth}" CommandParameter="2" InputGestureText="F11" />
+                        <MenuItem Header="_Mouth Three" Command="{Binding mouth}" CommandParameter="3" InputGestureText="F12" />
+                    </MenuItem>
+                </MenuItem>
+                    <MenuItem Header="_Help">
+        <MenuItem Header="_Online Documentation" Click="OpenHelpPage_Click"/>
+    </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>
+
