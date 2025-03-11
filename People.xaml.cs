@@ -103,6 +103,31 @@ namespace M01_First_WPF_Proj
             setModel(new Person());
             setContext();
         }
+      
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterPeople();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilterPeople();
+        }
+
+        private void FilterPeople()
+        {
+            List<Person> filteredPeople = new List<Person>();
+            foreach (Person person in _people)
+            {
+                if (person.LastName.ToLower().Contains(SearchTextBox.Text.ToLower()))
+                {
+                    filteredPeople.Add(person);
+                }
+            }
+            
+            PeopleListBox.ItemsSource = filteredPeople;
+
+        }
     }
 }
 
